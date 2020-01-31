@@ -78,15 +78,18 @@ const handleLogin = async success => {
         audio: {
           autoGainControl: true,
           echoCancellation: true,
-
-          noiseSuppression: true
+          noiseSuppression: true,
+          googAutoGainControl: true,
+          googEchoCancellation: true,
+          googNoiseSuppression: true
         }
       });
     } catch (error) {
       alert(`${error.name}`);
       console.error(error);
     }
-
+    document.querySelector("video#local").muted = true;
+    document.querySelector("video#local").volume = 0;
     document.querySelector("video#local").srcObject = localStream;
 
     const configuration = {
