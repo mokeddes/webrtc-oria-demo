@@ -130,8 +130,6 @@ const handleLogin = async success => {
 
     connection.onaddstream = event => {
       document.querySelector("video#remote").srcObject = event.stream;
-      document.querySelector("video#remote").muted = true;
-      document.querySelector("video#remote").volume = 0;
     };
 
     connection.onicecandidate = event => {
