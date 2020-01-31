@@ -88,7 +88,6 @@ const handleLogin = async success => {
       iceServers: [
         { url: "stun:stun2.1.google.com:19302" },
         { url: "stun:stun.stunprotocol.org" },
-        { url: "turn:numb.viagenie.ca" },
         { url: "stun:stun01.sipphone.com" },
         { url: "stun:stun.ekiga.net" },
         { url: "stun:stun.fwdnet.net" },
