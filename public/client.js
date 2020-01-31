@@ -88,9 +88,10 @@ const handleLogin = async success => {
       alert(`${error.name}`);
       console.error(error);
     }
-    document.querySelector("video#local").muted = true;
-    document.querySelector("video#local").volume = 0;
     document.querySelector("video#local").srcObject = localStream;
+
+    document.querySelector("video#local").muted = 0;
+    document.querySelector("video#local").volume = 0;
 
     const configuration = {
       iceServers: [
