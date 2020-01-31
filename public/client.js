@@ -78,6 +78,7 @@ const handleLogin = async success => {
         audio: {
           autoGainControl: true,
           echoCancellation: true,
+
           noiseSuppression: true
         }
       });
