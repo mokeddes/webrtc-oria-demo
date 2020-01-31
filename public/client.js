@@ -76,12 +76,12 @@ const handleLogin = async success => {
       localStream = await navigator.mediaDevices.getUserMedia({
         video: true,
         audio: {
-          autoGainControl: true,
-          echoCancellation: true,
-          noiseSuppression: true,
-          googAutoGainControl: true,
-          googEchoCancellation: true,
-          googNoiseSuppression: true
+          autoGainControl: false,
+          echoCancellation: false,
+          noiseSuppression: false,
+          googAutoGainControl: false,
+          googEchoCancellation: false,
+          googNoiseSuppression: false
         }
       });
     } catch (error) {
