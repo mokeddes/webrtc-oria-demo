@@ -1,4 +1,6 @@
-const ws = new WebSocket("ws://localhost:8090");
+const HOST = location.origin.replace(/^http/, "ws");
+
+const ws = new WebSocket(HOST);
 
 ws.onopen = () => {
   console.log("Connected to the signaling server");
