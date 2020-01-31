@@ -76,12 +76,12 @@ const handleLogin = async success => {
       localStream = await navigator.mediaDevices.getUserMedia({
         video: true,
         audio: {
-          autoGainControl: false,
-          echoCancellation: false,
-          noiseSuppression: false,
-          googAutoGainControl: false,
-          googEchoCancellation: false,
-          googNoiseSuppression: false
+          autoGainControl: true,
+          echoCancellation: true,
+          noiseSuppression: true,
+          googAutoGainControl: true,
+          googEchoCancellation: true,
+          googNoiseSuppression: true
         }
       });
     } catch (error) {
@@ -90,7 +90,7 @@ const handleLogin = async success => {
     }
     document.querySelector("video#local").srcObject = localStream;
 
-    document.querySelector("video#local").muted = 0;
+    document.querySelector("video#local").muted = true;
     document.querySelector("video#local").volume = 0;
 
     const configuration = {
@@ -130,6 +130,8 @@ const handleLogin = async success => {
 
     connection.onaddstream = event => {
       document.querySelector("video#remote").srcObject = event.stream;
+      document.querySelector("video#remote").muted = true;
+      document.querySelector("video#remote").volume = 0;
     };
 
     connection.onicecandidate = event => {
