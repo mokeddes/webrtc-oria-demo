@@ -75,7 +75,11 @@ const handleLogin = async success => {
     try {
       localStream = await navigator.mediaDevices.getUserMedia({
         video: true,
-        audio: true
+        audio: {
+          autoGainControl: false,
+          echoCancellation: false,
+          noiseSuppression: false
+        }
       });
     } catch (error) {
       alert(`${error.name}`);
